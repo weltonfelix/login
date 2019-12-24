@@ -21,8 +21,16 @@ footer{
 p{
     text-align: center;
 }
-input#sh{
+#sh, #next{
     background-color: white;
+	font-weight: bolder !important;
+}
+
+#next{
+	border-radius: 3px;
+	background: rgb(231, 32, 65);
+	color: white;
+	font: normal 11pt arial;
 }
 
 @media screen and (max-width: 600px){
