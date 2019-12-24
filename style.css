@@ -29,7 +29,8 @@ p{
 }
 #sh, #next, #back{
     background-color: white;
-	font-weight: bolder !important;
+    font-weight: bolder !important;
+    cursor: pointer;
 }
 
 #next, #back{
