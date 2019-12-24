@@ -27,33 +27,48 @@ footer{
 p{
     text-align: center;
 }
-#sh, #next, #back{
-    background-color: white;
-    font-weight: bolder !important;
-    cursor: pointer;
+
+span{
+	line-height: 10px;
 }
 
-#next, #back{
+.btns{
+    background-color: white;
+    font-weight: bold !important;
+    cursor: pointer;
+	padding: 2.8px !important;
+}
+
+.btnsNB{
 	border-radius: 3px;
 	background: rgb(231, 32, 65);
 	color: white;
 	font: normal 11pt arial;
+	padding: 7px;
+}
+
+.data{
+	height: 1.3em;
+	padding: 3px;
 }
 
 @media screen and (max-width: 600px){
     section{
         width: 85%;
     }
-    input#pass{
+    input#boxPswd{
         width: 10.15em;
     }
 }
 
 @media screen and (min-width: 600px){
     section{
-        width: 500px;
+        width: 50%;
     }
-    input#pass{
-        width: 27.3%;
+    input#boxPswd{
+        width: 45%;
     }
+	input.data{
+		width: 50%;
+	}
 }

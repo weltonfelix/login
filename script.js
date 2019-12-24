@@ -1,27 +1,32 @@
-const div = document.querySelector('div#main')
-function hs(){
-	const senha = document.getElementById('pass')
-    const sh = document.getElementById('sh')
-    if(senha.type == 'password'){
-        senha.type = 'show'
-        sh.value = '🐵'
-    }else{
-        senha.type = 'password'
-        sh.value = '🙈'
-    }
+ const div = document.querySelector('div#main') // Atribui a constante 'div' a div principal
+const divLogin = document.getElementById('main').innerHTML // Conteúdo padrão da div de login
+//const pswd = document.getElementById('boxPswd')
+
+function show(){ // Cria a função que esconde ou mostra a senhaconst pswd = document.getElementById('boxPswd')
+    const monkey = document.getElementById('btnMonkey')// Botão Macaco
+	const pswd = document.getElementById('boxPswd')
+    pswd.type = 'show'
+    monkey.value = '🐵'
 }
-function logar(){
-	const senha = document.getElementById('pass')
-	const mail = document.getElementById('mail')
-	if (senha.value.length == 0 || mail.value.length == 0){
+
+function hide(){
+	const monkey = document.getElementById('btnMonkey')// Botão Macaco
+	const pswd = document.getElementById('boxPswd')
+	pswd.type = 'password'
+	monkey.value = '🙈'
+}
+
+function login(){
+	const email = document.getElementById('boxEmail')
+	const pswd = document.getElementById('boxPswd')
+	if (pswd.value.length == 0 || email.value.length == 0){
 		alert('Preencha todos os campos!')
 	}else{
 		div.innerHTML = "<h3 id='works'>Login realizado com sucesso!</h3>"
-		div.innerHTML += "<p><input type='button' id='back' onclick='back()' value='Voltar'></p>"
+		div.innerHTML += "<p><input type='button' class='btns btnsNB' id='back' onclick='back()' value='Voltar'></p>"
 	}
 }
+
 function back(){
-	div.innerHTML = `<p>E-mail: <input type="email" name="e-mail" id="mail"></p>
-	<p>Senha: <input type="password" name="senha" id="pass"><input type="button" onclick="hs()" id="sh" value="🙈"></p>
-	<p><input type='button' id='next' onclick='logar()' value='Próximo'></p>`;
+	div.innerHTML = divLogin
 }
