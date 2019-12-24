@@ -24,18 +24,20 @@ p{
 input#sh{
     background-color: white;
 }
-input#pass{
-    width: 137px;
-}
-
 @media screen and (max-width: 600px){
     section{
         width: 85%;
+    }
+    input#pass{
+        width: 145px;
     }
 }
 
 @media screen and (min-width: 600px){
     section{
         width: 500px;
+    }
+    input#pass{
+        width: 137px;
     }
 }
