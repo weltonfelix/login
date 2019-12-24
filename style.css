@@ -6,6 +6,12 @@ header{
     color: white;
     text-align: center;
 }
+
+#works{
+	text-align:center;
+	color: rgb(231, 32, 65);
+}
+
 section{
     background: white;
     border-radius: 10px;
@@ -21,12 +27,12 @@ footer{
 p{
     text-align: center;
 }
-#sh, #next{
+#sh, #next, #back{
     background-color: white;
 	font-weight: bolder !important;
 }
 
-#next{
+#next, #back{
 	border-radius: 3px;
 	background: rgb(231, 32, 65);
 	color: white;
