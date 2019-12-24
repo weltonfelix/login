@@ -2,73 +2,64 @@ body{
     background: rgb(231, 32, 65);
     font: normal 15pt arial;
 }
+
 header{
     color: white;
     text-align: center;
 }
 
-#works{
-	text-align:center;
-	color: rgb(231, 32, 65);
-}
-
 section{
     background: white;
     border-radius: 10px;
-    padding: 15px;
+    padding: 5px;
     margin: auto;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.363);
-}
-footer{
-    color: white;
-    text-align: center;
-    font-style: italic;
-}
-p{
-    text-align: center;
-}
-
-span{
-	line-height: 10px;
-}
-
-.btns{
-    background-color: white;
-    font-weight: bold !important;
-    cursor: pointer;
-	padding: 2.8px !important;
-}
-
-.btnsNB{
-	border-radius: 3px;
-	background: rgb(231, 32, 65);
-	color: white;
-	font: normal 11pt arial;
-	padding: 7px;
+	text-align: center;
+	color: #4a4949;
 }
 
 .data{
-	height: 1.3em;
-	padding: 3px;
+	width: 70%;
+}
+
+#btnMonkey{
+	margin-top: 20px;
+}
+
+.btns{
+	background: white;
+	border-radius: 5px;
+	color: white;
+	font-weight: bolder;
+}
+
+.btnsNB{
+	background: rgb(231, 32, 65);
+	border: none;
+	padding: 5px;
+	margin-top: -20px;
+}
+
+#txtSH{	
+	font-size: 0.6em;
+	font-weight: bolder;
 }
 
 @media screen and (max-width: 600px){
-    section{
-        width: 85%;
-    }
-    input#boxPswd{
-        width: 10.3em;
-    }
+	.btnsNB{
+		width: 90%;
+	}
+	
+	#txtSH{
+		display: none;
+	}
 }
 
 @media screen and (min-width: 600px){
-    section{
-        width: 50%;
-    }
-    input#boxPswd{
-        width: 45.2%;
-    }
-	input.data{
-		width: 50%;
+	section{
+		width: 35%;
+	}
+	.btnsNB{
+		padding: 8px;
 	}
 }

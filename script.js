@@ -1,6 +1,5 @@
- const div = document.querySelector('div#main') // Atribui a constante 'div' a div principal
+const div = document.querySelector('div#main') // Atribui a constante 'div' a div principal
 const divLogin = document.getElementById('main').innerHTML // Conteúdo padrão da div de login
-//const pswd = document.getElementById('boxPswd')
 
 function show(){ // Cria a função que esconde ou mostra a senhaconst pswd = document.getElementById('boxPswd')
     const monkey = document.getElementById('btnMonkey')// Botão Macaco
@@ -12,12 +11,15 @@ function show(){ // Cria a função que esconde ou mostra a senhaconst pswd = do
 function showHide(){
 	const monkey = document.getElementById('btnMonkey')// Botão Macaco
 	const pswd = document.getElementById('boxPswd')
+	const txt = document.querySelector('span#txtSH')
 	 if(pswd.type == 'password'){
         pswd.type = 'show'
         monkey.value = '🐵'
+		txt.innerText = 'Ocultar Senha'
     }else{
         pswd.type = 'password'
         monkey.value = '🙈'
+		txt.innerText = 'Mostrar Senha'
     }
 }
 
