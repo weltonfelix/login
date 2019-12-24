@@ -9,11 +9,16 @@ function show(){ // Cria a função que esconde ou mostra a senhaconst pswd = do
     monkey.value = '🐵'
 }
 
-function hide(){
+function showHide(){
 	const monkey = document.getElementById('btnMonkey')// Botão Macaco
 	const pswd = document.getElementById('boxPswd')
-	pswd.type = 'password'
-	monkey.value = '🙈'
+	 if(pswd.type == 'password'){
+        pswd.type = 'show'
+        monkey.value = '🐵'
+    }else{
+        pswd.type = 'password'
+        monkey.value = '🙈'
+    }
 }
 
 function login(){
