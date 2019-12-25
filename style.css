@@ -18,8 +18,20 @@ section{
 	color: #4a4949;
 }
 
+.dataerror{
+	font-size: 11pt;
+	text-align: left;
+	margin-top: -15px;
+}
+
+.ferror{
+	border-color: red;
+}
+
+
 .data{
 	width: 70%;
+	border-radius: 6px;
 }
 
 #btnMonkey{
@@ -29,12 +41,12 @@ section{
 .btns{
 	background: white;
 	border-radius: 5px;
-	color: white;
+	color: white !important;
 	font-weight: bolder;
 }
 
 .btnsNB{
-	background: rgb(231, 32, 65);
+	background: rgb(231, 32, 65) !important;
 	border: none;
 	padding: 5px;
 	margin-top: -20px;

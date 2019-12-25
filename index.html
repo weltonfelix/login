@@ -14,14 +14,20 @@
     <section>
         <div id='main'>
 				<p class='dataTxt'>
-					E-mail: <input type='email' class='data' name='email' id='boxEmail'>
+                    E-mail: <input type='email' class='data' name='email' onblur="emailValidation()"id='boxEmail'>
+                    <p id='emailValidationField'>
+
+                    </p>
 				</p>
-				<p class='dataTxt'>
-					Senha: <input type='password' class='data' name='password' id='boxPswd'><br><input type='button' onclick='showHide()'class='btns' id='btnMonkey' value='🙈'>
-					<br><span id='txtSH'>Mostrar Senha</span>
+				<p class='dataTxt'>                    
+                    Senha: <input type='password' class='data' onblur="passwordValidation()" name='password' id='boxPswd'><br>
+                    <span id='passwordField'>
+                    </span>
+                    <input type='button' onclick='showHide()'class='btns' id='btnMonkey' value='🙈'>
+                    <br><span id='txtSH'>Mostrar Senha</span>
 				</p>
             <p>
-				<input type='button' class='btns btnsNB' id='btnNext' onclick='login()' value='Próximo'>
+				<input type='button' disabled class='btns btnsNB' id='btnNext' onclick='login()' value='Próximo'>
 			</p>
         </div>
 		
