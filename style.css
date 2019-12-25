@@ -19,9 +19,10 @@ section{
 }
 
 .dataerror{
-	font-size: 11pt;
-	text-align: left;
-	margin-top: -15px;
+	font-size: 0.7em;
+	float: left;
+	text-align: left !important;
+	margin: -10px 0 8px 5px;
 }
 
 .ferror{
@@ -32,6 +33,8 @@ section{
 .data{
 	width: 70%;
 	border-radius: 6px;
+	padding-left: 2px;
+	padding-right: 2px;
 }
 
 #btnMonkey{
@@ -55,6 +58,11 @@ section{
 #txtSH{	
 	font-size: 0.6em;
 	font-weight: bolder;
+}
+
+.inative{
+	background-color: #a0a0a0 !important;
+	box-shadow: 1px 1px 5px black;
 }
 
 @media screen and (max-width: 600px){
