@@ -1,6 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 body{
     background: rgb(231, 32, 65);
-    font: normal 15pt arial;
+    font: normal 20pt 'Roboto', sans-serif;
 }
 
 header{
@@ -32,9 +33,11 @@ section{
 
 .data{
 	width: 70%;
+	height: 2em;
 	border-radius: 6px;
 	padding-left: 2px;
 	padding-right: 2px;
+	font: normal 0.6em 'Roboto', sans-serif;
 }
 
 #btnMonkey{
@@ -81,5 +84,6 @@ section{
 	}
 	.btnsNB{
 		padding: 8px;
+		font-size: 0.75em;
 	}
 }

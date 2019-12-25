@@ -7,6 +7,9 @@ function load(){
 	email = document.getElementById('boxEmail')
 	emailClass = email.className
 	next = document.getElementById('btnNext')
+	isEmailValid = false
+	isPasswordValid = false
+	mailUser = false
 }
 
 function showHide(){
@@ -27,7 +30,8 @@ function login(){
 		div.innerHTML = "<h3 id='works'>Login realizado com sucesso!</h3>"
 		div.innerHTML += "<p><input type='button' class='btns btnsNB' id='back' onclick='back()' value='Voltar'></p>"
 	}else{
-		alert('Preencha todos os campos!')
+		next.disabled = true
+		next.classList.add('inative')
 	}
 }
 
@@ -38,13 +42,27 @@ function back(){
 
 function passwordValidation(){
 	const PVF = document.querySelector('span#passwordField')
-	const criteria = (pswd.value.length >= 8) && (pswd.value != email.value)
+	var criteria = (pswd.value.length >= 8) && (pswd.value != email.value) && (pswd.value != mailUser)
 	if(criteria){
 		PVF.innerHTML = ' '
 		isPasswordValid = true
-	}else{
-		PVF.innerHTML = "<br><span class='dataerror' style='color: red'>A senha deve ter pelo menos 8 caracteres e ser diferente do E-mail</span><br>"
-		isPasswordValid = false
+	}
+	pswd.onblur = function(){
+		if(criteria){
+			PVF.innerHTML = ' '
+			pswd.classList.remove('ferror')
+			isPasswordValid = true
+		}
+		if (!criteria){
+			if(pswd.value.length != 0){
+				PVF.innerHTML = "<br><span class='dataerror' style='color: red'>A senha deve ter pelo menos 8 caracteres e ser diferente do E-mail</span><br>"
+				pswd.classList.add('ferror')
+			}else{
+				PVF.innerHTML = ' '
+				pswd.classList.remove('ferror')
+			}
+			isPasswordValid = false
+		}
 	}
 	canLogin()	
 }
@@ -52,17 +70,26 @@ function passwordValidation(){
 function emailValidation(){
 	var MVF = document.getElementById('emailValidationField') // Mail Validation Field recebe o campo
 	var atPos = email.value.indexOf('@')
-	var user = email.value.substring(0, atPos)
+	mailUser = email.value.substring(0, atPos)
 	var domain = email.value.substring(atPos + 1, email.value.length)
-	const criteria = (user.length >= 1) && (domain.length>=4) && (user.search('@') == -1) && (domain.search('@') == -1) && (user.search(' ') == -1) && (domain.search(' ') == -1) && (domain.search('.' != -1)) && (domain.indexOf('.')>=1) && (domain.lastIndexOf('.') < (domain.length - 1))
-	if (criteria == false){
-		MVF.innerHTML = "<span class='dataerror' style='color: red'>Verifique o e-mail, ele deve estar no formato: meuemail@email.com</span>"
-		email.classList.add('ferror')
-		isEmailValid = false
-	}else{
+	const criteria = (mailUser.length >= 1) && (domain.length>=4) && (mailUser.search('@') == -1) && (domain.search('@') == -1) && (mailUser.search(' ') == -1) && (domain.search(' ') == -1) && (domain.search('.' != -1)) && (domain.indexOf('.')>=1) && (domain.lastIndexOf('.') < (domain.length - 1))
+	if (criteria){
 		MVF.innerHTML = ''
 		email.className = emailClass
 		isEmailValid = true
+	}
+	email.onblur = function(){
+		if(email.value.length == 0){
+			MVF.innerHTML = ''
+			email.classList.remove('ferror')
+		}
+		if (!criteria){
+			if(email.value.length != 0){		
+				MVF.innerHTML = "<span class='dataerror' style='color: red'>Verifique o e-mail, ele deve estar no formato: meuemail@email.com</span>"
+				email.classList.add('ferror')
+			}
+			isEmailValid = false
+		}
 	}
 	canLogin()
 }
