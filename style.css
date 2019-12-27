@@ -19,6 +19,10 @@ section{
 	color: #4a4949;
 }
 
+input:focus{
+    outline: 0;
+}
+
 .dataerror{
 	font-size: 0.7em;
 	float: left;
