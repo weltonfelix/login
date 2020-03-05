@@ -3,6 +3,8 @@
   
   [**Acessar**](https://weltonfelix.github.io/login)
   
+  ![](loginGIF.gif)
+
 ## Funções
 ### Mostrar/Ocultar Senha
   Ao clicar no botão com o emoji do macaco, o modo de eibição da senha é alternado através da função:
