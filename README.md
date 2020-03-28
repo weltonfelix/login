@@ -1,13 +1,32 @@
-# Página de Login
-  Página de login simples usando HTML5, CSS e JS.
+# Login Page
+  Single login page using HTML5, CSS and JavaScript.
   
-  [**Acessar**](https://weltonfelix.github.io/login)
+  [**Acess here**](https://weltonfelix.github.io/login)
   
+  <p align="center">
+  <img alt="Github language counter" src="https://img.shields.io/github/languages/count/weltonfelix/login?color=%2304D361">
+
+  <img alt="Repo size" src="https://img.shields.io/github/repo-size/weltonfelix/login">
+	
+  <a href="https://www.github.com/weltonfelix">
+    <img alt="Made by Welton" src="https://img.shields.io/badge/Made%20by-Welton-%2304D361">
+  </a>
+
+  <a href="https://github.com/weltonfelix/login/commits/master">
+    <img alt="Last commit" src="https://img.shields.io/github/last-commit/weltonfelix/login">
+  </a>
+
+  <a href="https://github.com/weltonfelix/login/issues">
+    <img alt="Issues" src="https://img.shields.io/github/issues/weltonfelix/login">
+  </a>
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
+</p>
+
   ![](loginGIF.gif)
 
-## Funções
-### Mostrar/Ocultar Senha
-  Ao clicar no botão com o emoji do macaco, o modo de eibição da senha é alternado através da função:
+## :gear: Features
+### :monkey_face: Hide / Show Password
+  Click on the monkey button to hide/show your password.
   ```
     function showHide(){
       const txt = document.querySelector('span#txtSH')
@@ -24,8 +43,8 @@
 
   ```
   
-### Validação do E-mail e da Senha
-  Enquanto o usuário digita, ocorre uma validação dos dados informados, através das funções:
+### :heavy_check_mark: Email and Password validation.
+  While user types, the data is validated.
   ```
   function emailValidation(){
     var MVF = document.getElementById('emailValidationField') // Mail Validation Field recebe o campo
@@ -85,7 +104,7 @@
   
   ```
   
-  Apenas após a validação dos dados, o botão para prosseguir com o login é ativado.
+  After data validation, the login button is activated.
       
     function canLogin(){
       if (isEmailValid && isPasswordValid){
@@ -96,3 +115,25 @@
         next.classList.add('inative')
       }
     }
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/weltonfelix/login/issues).
+- Make a fork;
+- Create a branck with your feature: `git checkout -b my-feature`;
+- Commit changes: `git commit -m 'feat: My new feature'`;
+- Make a push to your branch: `git push origin my-feature`.
+
+After merging your receipt request to done, you can delete a branch from yours.
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
+
+## :memo: License
+
+This project is under the MIT license. See the [LICENSE](LICENSE.md) for details.
+
+---
+
+Made with ♥ by Welton Felix :wave: [Get in touch!](mailto:contato.weltonf@gmail.com)
