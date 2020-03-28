@@ -22,7 +22,9 @@
   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
 </p>
 
-  ![](loginGIF.gif)
+<h3 align="center">
+	<img alt="Login Page" title="Login Page" src="./loginGIF.gif">
+</h3>
 
 ## :gear: Features
 ### :monkey_face: Hide / Show Password
