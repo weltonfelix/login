@@ -2,7 +2,8 @@ load()
 function load(){
 	div = document.querySelector('div#main') // Atribui a constante 'div' a div principal
 	divLogin = document.querySelector('div#main').innerHTML // Conteúdo padrão da div de login
-	monkey = document.querySelector('input#btnMonkey')// Botão Macaco
+	monkey = document.querySelector('button#btnMonkey')// Botão Macaco
+	monkeyImg = document.querySelector('img#monkeyIcon')// Monkey Image
 	pswd = document.querySelector('input#boxPswd')
 	email = document.getElementById('boxEmail')
 	emailClass = email.className
@@ -16,11 +17,11 @@ function showHide(){
 	const txt = document.querySelector('span#txtSH')
 	 if(pswd.type == 'password'){
         pswd.type = 'show'
-        monkey.value = '🐵'
+        monkeyImg.src = './assets/monkey.png'
 		txt.innerText = 'Ocultar Senha'
     }else{
         pswd.type = 'password'
-        monkey.value = '🙈'
+        monkeyImg.src = '/assets/monkeyCoveringEyes.png'
 		txt.innerText = 'Mostrar Senha'
     }
 }

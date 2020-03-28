@@ -60,6 +60,7 @@ input:focus{
 	border: none;
 	padding: 5px;
 	margin-top: -20px;
+	cursor: pointer;
 }
 
 #txtSH{	
@@ -70,6 +71,7 @@ input:focus{
 .inative{
 	background-color: #a0a0a0 !important;
 	box-shadow: 1px 1px 5px black;
+	cursor: auto !important;
 }
 
 @media screen and (max-width: 600px){
