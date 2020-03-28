@@ -21,7 +21,7 @@ function showHide(){
 		txt.innerText = 'Ocultar Senha'
     }else{
         pswd.type = 'password'
-        monkeyImg.src = '/assets/monkeyCoveringEyes.png'
+        monkeyImg.src = './assets/monkeyCoveringEyes.png'
 		txt.innerText = 'Mostrar Senha'
     }
 }
