@@ -1,5 +1,5 @@
 # Login Page
-  Single login page using HTML5, CSS and JavaScript.
+  Simple login page using HTML5, CSS and JavaScript.
   
   [**Acess here**](https://weltonfelix.github.io/login)
   
