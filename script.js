@@ -43,18 +43,21 @@ function back(){
 
 function passwordValidation(){
 	const PVF = document.querySelector('span#passwordField')
-	var criteria = (pswd.value.length >= 8) && (pswd.value != email.value) && (pswd.value != mailUser)
-	if(criteria){
-		PVF.innerHTML = ' '
-		isPasswordValid = true
+	function criteria() {
+	 return (pswd.value.length >= 8) && (pswd.value != email.value) && (pswd.value != mailUser)
 	}
-	pswd.onblur = function(){
-		if(criteria){
+	pswd.onkeyup = function(){
+		if(criteria()) {
 			PVF.innerHTML = ' '
 			pswd.classList.remove('ferror')
 			isPasswordValid = true
+		} else {
+			isPasswordValid = false
 		}
-		if (!criteria){
+		canLogin()	
+	}
+	pswd.onblur = () => {		
+		if (!criteria()){
 			if(pswd.value.length != 0){
 				PVF.innerHTML = "<br><span class='dataerror' style='color: red'>A senha deve ter pelo menos 8 caracteres e ser diferente do E-mail</span><br>"
 				pswd.classList.add('ferror')
@@ -64,35 +67,43 @@ function passwordValidation(){
 			}
 			isPasswordValid = false
 		}
+		canLogin()
 	}
-	canLogin()	
 }
 
 function emailValidation(){
 	var MVF = document.getElementById('emailValidationField') // Mail Validation Field recebe o campo
-	var atPos = email.value.indexOf('@')
-	mailUser = email.value.substring(0, atPos)
-	var domain = email.value.substring(atPos + 1, email.value.length)
-	const criteria = (mailUser.length >= 1) && (domain.length>=4) && (mailUser.search('@') == -1) && (domain.search('@') == -1) && (mailUser.search(' ') == -1) && (domain.search(' ') == -1) && (domain.search('.' != -1)) && (domain.indexOf('.')>=1) && (domain.lastIndexOf('.') < (domain.length - 1))
-	if (criteria){
-		MVF.innerHTML = ''
-		email.className = emailClass
-		isEmailValid = true
+	function criteriaMail() {
+		var atPos = email.value.indexOf('@')
+		mailUser = email.value.substring(0, atPos)
+		var domain = email.value.substring(atPos + 1, email.value.length)
+		return (mailUser.length >= 1) && (domain.length>=4) && (mailUser.search('@') == -1) && (domain.search('@') == -1) && (mailUser.search(' ') == -1) && (domain.search(' ') == -1) && (domain.search('.' != -1)) && (domain.indexOf('.')>=1) && (domain.lastIndexOf('.') < (domain.length - 1))
 	}
-	email.onblur = function(){
+	email.onkeyup = function(){
 		if(email.value.length == 0){
 			MVF.innerHTML = ''
 			email.classList.remove('ferror')
+		} else {
+			if (criteriaMail()){
+				MVF.innerHTML = ''
+				email.className = emailClass
+				isEmailValid = true
+			} else {
+				isEmailValid = false
+			}
 		}
-		if (!criteria){
+		canLogin()
+	}
+	email.onblur = function(){
+		if (!criteriaMail()){
 			if(email.value.length != 0){		
 				MVF.innerHTML = "<span class='dataerror' style='color: red'>Verifique o e-mail, ele deve estar no formato: meuemail@email.com</span>"
 				email.classList.add('ferror')
 			}
 			isEmailValid = false
 		}
+		canLogin()
 	}
-	canLogin()
 }
 
 function canLogin(){
